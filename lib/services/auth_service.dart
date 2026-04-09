@@ -20,4 +20,9 @@ class AuthService {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(_keyLoggedIn) ?? false;
   }
+
+  static Future<String?> getEmail() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_keyEmail);
+  }
 }
