@@ -39,16 +39,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shopee Style Shop'),
+        title: const Text('Danh sách sản phẩm'),
         actions: [
-          const AppMenu(),
           IconButton(
             onPressed: _logout,
             icon: const Icon(Icons.logout),
-            tooltip: 'Logout',
+            tooltip: 'Đăng xuất',
           ),
         ],
       ),
+      drawer: const AppMenu(),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -60,8 +60,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 final email = snapshot.data;
                 return Text(
                   email == null || email.isEmpty
-                      ? 'Welcome to the shop'
-                      : 'Welcome, $email',
+                      ? 'Chào mừng bạn đến với cửa hàng'
+                      : 'Xin chào, $email',
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
@@ -79,13 +79,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   }
 
                   if (snapshot.hasError) {
-                    return Center(child: Text('Error: ${snapshot.error}'));
+                    return Center(child: Text('Lỗi: ${snapshot.error}'));
                   }
 
                   final products = snapshot.data ?? [];
 
                   if (products.isEmpty) {
-                    return const Center(child: Text('No products found.'));
+                    return const Center(child: Text('Không có sản phẩm nào.'));
                   }
 
                   return GridView.builder(

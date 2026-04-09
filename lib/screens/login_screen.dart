@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      appBar: AppBar(title: const Text('Đăng nhập')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Form(
@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Email is required';
+                    return 'Vui lòng nhập email';
                   }
                   return null;
                 },
@@ -64,10 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(
                 controller: _passwordController,
                 obscureText: true,
-                decoration: const InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Mật khẩu'),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Password is required';
+                    return 'Vui lòng nhập mật khẩu';
                   }
                   return null;
                 },
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           height: 18,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : const Text('Login'),
+                      : const Text('Đăng nhập'),
                 ),
               ),
               const SizedBox(height: 12),
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     MaterialPageRoute(builder: (_) => const RegisterScreen()),
                   );
                 },
-                child: const Text('Create a new account'),
+                child: const Text('Tạo tài khoản mới'),
               ),
             ],
           ),

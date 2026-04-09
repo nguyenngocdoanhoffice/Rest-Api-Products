@@ -6,7 +6,7 @@ class ContactScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Contact')),
+      appBar: AppBar(title: const Text('Liên hệ')),
       body: const Padding(
         padding: EdgeInsets.all(16),
         child: Text('Email: example@gmail.com'),

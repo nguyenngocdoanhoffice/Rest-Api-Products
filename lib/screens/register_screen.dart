@@ -34,7 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Register')),
+      appBar: AppBar(title: const Text('Đăng ký')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Form(
@@ -47,7 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Email is required';
+                    return 'Vui lòng nhập email';
                   }
                   return null;
                 },
@@ -56,10 +56,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               TextFormField(
                 controller: _passwordController,
                 obscureText: true,
-                decoration: const InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Mật khẩu'),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Password is required';
+                    return 'Vui lòng nhập mật khẩu';
                   }
                   return null;
                 },
@@ -69,14 +69,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 controller: _confirmController,
                 obscureText: true,
                 decoration: const InputDecoration(
-                  labelText: 'Confirm Password',
+                  labelText: 'Nhập lại mật khẩu',
                 ),
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Confirm password is required';
+                    return 'Vui lòng nhập lại mật khẩu';
                   }
                   if (value != _passwordController.text) {
-                    return 'Passwords do not match';
+                    return 'Mật khẩu không khớp';
                   }
                   return null;
                 },
@@ -90,7 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     backgroundColor: Colors.deepOrange,
                     foregroundColor: Colors.white,
                   ),
-                  child: const Text('Register'),
+                  child: const Text('Đăng ký'),
                 ),
               ),
             ],

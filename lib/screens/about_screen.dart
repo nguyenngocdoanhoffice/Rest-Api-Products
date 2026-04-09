@@ -6,11 +6,11 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('About')),
+      appBar: AppBar(title: const Text('Giới thiệu')),
       body: const Padding(
         padding: EdgeInsets.all(16),
         child: Text(
-          'This is a simple Flutter shop demo that loads products from a REST API.',
+          'Đây là ứng dụng cửa hàng Flutter đơn giản, lấy sản phẩm từ REST API.',
         ),
       ),
     );
